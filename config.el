@@ -74,3 +74,21 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; When pass all keys to emacs, at least allow switch-activity
+(require 'dbus)
+(defun my-switch-activity ()
+  "Switch the kde activty."
+  (interactive)
+  (cl-flet ((call (method &rest args)
+                  (apply 'dbus-call-method
+                         (append `(:session
+                                   "org.kde.ActivityManager"
+                                   "/ActivityManager/Activities"
+                                   "org.kde.ActivityManager.Activities"
+                                   ,method)
+                                 args))))
+    (call "SetCurrentActivity"
+          (car (remove (call "CurrentActivity")
+                       (call "ListActivities"))))))
+(map! "s-<tab>" #'my-switch-activity)
