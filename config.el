@@ -75,6 +75,9 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+;; F7 - F9 -- reserved for user
+(map! "<f7>" 'eshell)
+
 ;; When pass all keys to emacs, at least allow switch-activity
 (require 'dbus)
 (defun my-switch-activity ()
