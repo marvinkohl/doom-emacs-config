@@ -95,3 +95,8 @@
           (car (remove (call "CurrentActivity")
                        (call "ListActivities"))))))
 (map! "s-<tab>" #'my-switch-activity)
+
+;; Use ace-jump-mode
+(use-package! ace-jump-mode
+  :bind (("C-c SPC" . ace-jump-mode)
+         ("C-c j" . ace-jump-mode)))
