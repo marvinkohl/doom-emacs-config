@@ -101,7 +101,9 @@
   :bind (("C-c SPC" . ace-jump-mode)
          ("C-c j" . ace-jump-mode)))
 
-(add-hook! lisp-mode (turn-on-smartparens-strict-mode))
+(add-hook! lisp-mode
+  (turn-on-smartparens-strict-mode)
+  (sp-use-smartparens-bindings))
 
 (defun my-transpose-windows ()
   "Interchanges the two open windows."
