@@ -102,3 +102,12 @@
          ("C-c j" . ace-jump-mode)))
 
 (add-hook! lisp-mode (turn-on-smartparens-strict-mode))
+
+(defun my-transpose-windows ()
+  "Interchanges the two open windows."
+  (interactive)
+  (unless (= 2 (count-windows))
+    (error "Es sind nicht zwei Fenster vorhanden."))
+  (let ((windows (window-list)))
+    (rotatef (window-buffer (first windows))
+             (window-buffer (second windows)))))
