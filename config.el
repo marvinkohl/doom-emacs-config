@@ -113,3 +113,6 @@
   (let ((windows (window-list)))
     (rotatef (window-buffer (first windows))
              (window-buffer (second windows)))))
+
+;; Set prolog as default for .pl files
+(add-to-list 'auto-mode-alist '("\\.pl\\'" . prolog-mode))
