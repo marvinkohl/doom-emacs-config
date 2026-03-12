@@ -116,3 +116,9 @@
 
 ;; Set prolog as default for .pl files
 (add-to-list 'auto-mode-alist '("\\.pl\\'" . prolog-mode))
+
+(use-package! prolog
+  :config
+  (map! (:localleader
+         :map prolog-mode-map
+         :desc "Consult file"   "l" #'prolog-consult-file)))
