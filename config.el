@@ -119,6 +119,9 @@
 
 (use-package! prolog
   :config
+  (set-popup-rules!
+    '(("^\\*prolog\\*$")))
+
   (map! (:localleader
          :map prolog-mode-map
          :desc "Consult file"   "l" #'prolog-consult-file)))
