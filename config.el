@@ -124,4 +124,23 @@
 
   (map! (:localleader
          :map prolog-mode-map
-         :desc "Consult file"   "l" #'prolog-consult-file)))
+         "/" #'prolog-help-apropos
+         "?" #'prolog-help-on-predicate
+         "a" #'align
+         "b" #'prolog-consult-buffer
+         "c b" #'prolog-compile-buffer
+         "c f" #'prolog-compile-file
+         "c p" #'prolog-compile-predicate
+         "c r" #'prolog-compile-region
+         "d" #'prolog-debug-on
+         "f" #'prolog-consult-file
+         "l" #'prolog-consult-file
+         "n" #'prolog-insert-predicate-template
+         "p" #'prolog-consult-predicate
+         "r" #'prolog-consult-region
+         "s" #'prolog-insert-predspec
+         "t" #'prolog-trace-on
+         "v s" #'prolog-view-predspec
+         "v a" #'prolog-variables-to-anonymous
+         "z" #'run-prolog
+         "RET" #'run-prolog)))
