@@ -98,8 +98,10 @@
 
 ;; Use ace-jump-mode
 (use-package! ace-jump-mode
-  :bind (("C-c SPC" . ace-jump-mode)
-         ("C-c j" . ace-jump-mode)))
+  :config
+  (map! "C-c SPC" #'ace-jump-mode
+        "C-c j" #'ace-jump-mode
+        (:leader "j" #'ace-jump-mode)))
 
 (add-hook! lisp-mode
   (turn-on-smartparens-strict-mode)
