@@ -119,6 +119,13 @@
 ;; Set prolog as default for .pl files
 (add-to-list 'auto-mode-alist '("\\.pl\\'" . prolog-mode))
 
+(defun my-prolog-run-tests ()
+  "Run Prolog Tests."
+  (interactive)
+  (let ((prolog-run-tests-string "run_tests.\n"))
+    (prolog-process-insert-string (get-process "prolog") prolog-run-tests-string)
+    (process-send-string "prolog" prolog-run-tests-string)))
+
 (use-package! prolog
   :config
   (set-popup-rules!
@@ -142,6 +149,7 @@
          "r" #'prolog-consult-region
          "s" #'prolog-insert-predspec
          "t" #'prolog-trace-on
+         "u" #'my-prolog-run-tests
          "v s" #'prolog-view-predspec
          "v a" #'prolog-variables-to-anonymous
          "z" #'run-prolog
