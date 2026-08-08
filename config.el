@@ -107,6 +107,9 @@
   (turn-on-smartparens-strict-mode)
   (sp-use-smartparens-bindings))
 
+(add-hook! markdown-mode
+  (turn-on-auto-fill))
+
 (defun my-transpose-windows ()
   "Interchanges the two open windows."
   (interactive)
