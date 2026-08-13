@@ -103,6 +103,8 @@
         "C-c j" #'ace-jump-mode
         (:leader "j" #'ace-jump-mode)))
 
+(map! :n "ZM" #'suspend-frame)
+
 (add-hook! lisp-mode
   (turn-on-smartparens-strict-mode)
   (sp-use-smartparens-bindings))
