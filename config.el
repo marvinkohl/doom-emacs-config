@@ -105,6 +105,10 @@
 
 (map! :n "ZM" #'suspend-frame)
 
+(setf sly-lisp-implementations
+      '((sbcl ("sbcl"))
+        (ecl ("ecl"))))
+
 (add-hook! lisp-mode
   (turn-on-smartparens-strict-mode)
   (sp-use-smartparens-bindings))
