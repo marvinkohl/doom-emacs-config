@@ -79,6 +79,19 @@
 ;; F7 - F9 -- reserved for user
 (map! "<f7>" 'eshell)
 
+;; Enable spell checking for multiple languages
+;; Based on the config from
+;; <https://200ok.ch/posts/2020-08-22_setting_up_spell_checking_with_multiple_dictionaries.html> 
+(after! ispell
+  (setenv "LANG" "de-DE.UTF-8")
+  (setf ispell-program-name "hunspell")
+  (setf ispell-dictionary "de_DE,en_GB,en_US,eo")
+  (ispell-set-spellchecker-params)
+  (ispell-hunspell-add-multi-dic "de_DE,en_GB,en_US,eo")
+  (setf ispell-personal-dictionary "~/.hunspell_personal")
+  (unless (file-exists-p ispell-personal-dictionary)
+    (write-region "" nil ispell-personal-dictionary nil 0)))
+
 ;; When pass all keys to emacs, at least allow switch-activity
 (require 'dbus)
 (defun my-switch-activity ()
