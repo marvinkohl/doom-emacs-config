@@ -1,4 +1,7 @@
 ;; -*- no-byte-compile: t; -*-
+;; Copyright © 2026 Marvin Kohl <marvin.kohl@posteo.de>
+;; Licensed under the MIT License
+
 ;;; $DOOMDIR/packages.el
 
 ;; To install a package with Doom you must declare them here and run 'doom sync'

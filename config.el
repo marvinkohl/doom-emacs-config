@@ -1,4 +1,6 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
+;; Copyright © 2026 Marvin Kohl <marvin.kohl@posteo.de>
+;; Licensed under the MIT License
 
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!

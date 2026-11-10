@@ -1,4 +1,6 @@
 ;;; init.el -*- lexical-binding: t; -*-
+;; Copyright © 2026 Marvin Kohl <marvin.kohl@posteo.de>
+;; Licensed under the MIT License
 
 ;; This file controls what Doom modules are enabled and what order they load
 ;; in. Remember to run 'doom sync' after modifying it!
